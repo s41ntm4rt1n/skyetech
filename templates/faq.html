@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Frequently Asked Questions{% endblock %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<section class="iq-breadcrumb text-left">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-md-8 text-left mb-4 mb-lg-0 align-self-center">
+            <h2 class="title">FAQ</h2>
+         </div>
+         <div class="col-lg-4 col-md-4 text-right">
+            <img  src="{% static 'images/faq.png' %}" class="img-fluid" alt="#"/>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Breadcrumb End -->
+<!-- Main-Content Start -->
+<div class="main-content">
+   <section class="black-faq">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="title-box title-white   text-center" style="color:#fff">
+                  <span>FAQ</span>
+                  <h2 class="title">Frequently Asked Questions.</h2>
+                  <p class="mb-0">It is a long established fact that a reader will be distracted</p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="iq-accordion">
+                  <div class="iq-accordion-block">
+                     <a href="javascript:void(0)" class="ad-title">Ipsum is simply dummy the printing?</a>
+                     <div class="iq-accordion " style="display: none;">
+                        <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+                     </div>
+                  </div>
+                  <div class="iq-accordion-block">
+                     <a href="javascript:void(0)" class="ad-title">Ipsum is simply dummy the printing?</a>
+                     <div class="iq-accordion " style="display: none;">
+                        <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+                     </div>
+                  </div>
+                  <div class="iq-accordion-block">
+                     <a href="javascript:void(0)" class="ad-title">Ipsum is simply dummy the printing?</a>
+                     <div class="iq-accordion-detail " style="display: none;">
+                        <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+                     </div>
+                  </div>
+                  <div class="iq-accordion-block">
+                     <a href="javascript:void(0)" class="ad-title">Ipsum is simply dummy the printing?</a>
+                     <div class="iq-accordion-detail " style="display: none;">
+                        <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+                     </div>
+                  </div>
+                  <div class="iq-accordion-block ad-active">
+                     <a href="javascript:void(0)" class="ad-title">Ipsum is simply dummy the printing?</a>
+                     <div class="iq-accordion-detail " style="display: block;">
+                        <p>It has survived not only five centuries, but also the leap into electronic typesetting. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Counter start -->
+   <div class="iq-counter-box">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+               <div class="iq-counter pb-0">
+                  <span class="timer" data-to="1105" data-speed="5000">1105</span>
+                  <h6>Years of Experience</h6>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+               <div class="iq-counter pb-0">
+                  <span class="timer" data-to="680" data-speed="5000">680</span>
+                  <h6>Awards &amp; Recognition</h6>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+               <div class="iq-counter pb-0">
+                  <span class="timer" data-to="2500" data-speed="5000">2500</span>
+                  <h6>Completed Projects</h6>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+               <div class="iq-counter">
+                  <span class="timer" data-to="1440" data-speed="5000">1440</span>
+                  <h6>Satisfied Clients</h6>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Counter End -->
+   {% include 'components/newsletter.html' %}
+</div>
+<!-- Main-Content End -->
+{% endblock %}

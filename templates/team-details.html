@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{member.name}} {% endblock %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<section class="iq-breadcrumb text-left green-bg">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-md-8 text-left mb-4 mb-lg-0 align-self-center">
+            <h2 class="title">Team Details</h2>
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url 'team' %}"><i class="fa fa-home" aria-hidden="true"></i>Team</a></li>
+                  <li class="breadcrumb-item active">{{member.name}}</li>
+               </ol>
+            </nav>
+         </div>
+         <div class="col-lg-4 col-md-4 text-right">
+            <img  src="{% static 'images/team/05.png' %}" class="img-fluid" alt="#"/>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Breadcrumb End -->
+<!-- Main-Content Start -->
+<div class="main-content">
+   <!-- Team Details Start -->
+   <section class="team-details gray-bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3 col-md-4 border">
+               <div class="img-box text-center">
+                  <img src="{{member.image.url}}" class="img-fluid" alt="{{member.name}}">
+               </div>
+            </div>
+            <div class="col-lg-9 col-md-8 pl-5 mt-4">
+               <h2>{{member.name}}</h2>
+               <h4 class="mb-3"><span class="main-color">&nbsp;{{member.role}}</span></h4>
+               <p class="">{{member.about}}</p>
+               <div class="row mt-5">
+                  <div class="col-lg-6 col-sm-12">
+                     <ul class="team-details">
+                        
+                        <li class="mb-3">
+                           <h5 class="mr-3">Phone :</h5>
+                           <p class="mb-0">{{member.phone}}</p>
+                        </li>
+                        <li class="mb-3">
+                           <h5 class="mr-3">Email :</h5>
+                           <p class="mb-0">{{member.email}}</p>
+                        </li>
+                     </ul>
+                     <h4>Links</h4>
+                        <div class="share mt-2">
+                           <ul>
+                              {% for url in member.get_urls %}
+                              <li><a href="{{url.url}}"><i class="{{url.title}}"></i></a></li>
+                              {% endfor %}
+                           </ul>
+                        </div>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="scrolling-text bottam right default">
+         <div data-bottom="transform:translatex(300px)" data-top="transform:translatex(0);">Our Best Team</div>
+      </div>
+   </section>
+   <!-- Team Details Start -->
+   <!-- Progress Bar Start -->
+   <section class="overview-block-pb">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-6">
+               <div class="iq-services-box text-left">
+                  <div class="services-content">
+                     <h6>HTML5</h6>
+                     <span class="progress-value">70%</span>
+                     <div class="iq-progress-bar">
+                        <span data-percent="70" style="transition: width 2s ease 0s; width: 70%;"></span>
+                     </div>
+                  </div>
+                  <div class="services-content">
+                     <h6>JS</h6>
+                     <span class="progress-value">85%</span>
+                     <div class="iq-progress-bar">
+                        <span data-percent="85" style="transition: width 2s ease 0s; width: 85%;"></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="iq-services-box text-left">
+                  <div class="services-content">
+                     <h6>CSS3</h6>
+                     <span class="progress-value">80%</span>
+                     <div class="iq-progress-bar">
+                        <span data-percent="80" style="transition: width 2s ease 0s; width: 80%;"></span>
+                     </div>
+                  </div>
+                  <div class="services-content">
+                     <h6>PHP</h6>
+                     <span class="progress-value">50%</span>
+                     <div class="iq-progress-bar">
+                        <span data-percent="50" style="transition: width 2s ease 0s; width: 50%;"></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Progress Bar Start -->
+   <!-- Counter start -->
+   <div class="iq-counter-box gray-bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+               <div class="iq-counter pb-0">
+                  <span class="timer" data-to="1105" data-speed="5000">1105</span>
+                  <h6>Years of Experience</h6>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+               <div class="iq-counter pb-0">
+                  <span class="timer" data-to="680" data-speed="5000">680</span>
+                  <h6>Awards &amp; Recognition</h6>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+               <div class="iq-counter pb-0">
+                  <span class="timer" data-to="2500" data-speed="5000">2500</span>
+                  <h6>Completed Projects</h6>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+               <div class="iq-counter">
+                  <span class="timer" data-to="1440" data-speed="5000">1440</span>
+                  <h6>Satisfied Clients</h6>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Counter End -->
+
+   {% include 'components/newsletter.html' %}
+</div>
+<!-- Main-Content End -->
+{% endblock %}

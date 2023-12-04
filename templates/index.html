@@ -1,0 +1,309 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+   <div class="container">
+   <div class="iq-banner">
+      <div class="row slider-row justify-content-between">
+         <div class="col-lg-6 align-self-center">
+            <div class="slider-banner">
+               <h2 class="text-uppercase mb-3">Skyetech<br>Design & Technology Hub</h2>
+               <p class="pr-lg-4 mb-4">Crafting innovative solutions to elevate your digital presence, we redefine excellence at the intersection of technology and business – your trusted IT partner.</p>
+               <a href="{% url 'about' %}" class="btn slide-button button">Read More</a>
+            </div>
+         </div>
+         <div class="col-lg-6">
+            <div class="slider-image-1 slide-1">
+               
+               <div class="slider-2"></div>
+               <div class="slider-3"></div>
+               <div class="slider-4"></div>
+               <img class="banner-img img-fluid center-block wow bounce" src="{% static 'images/header.avif' %}" alt="">
+            </div>
+         </div>
+         </div>
+   </div>
+   </div>
+   <div class="main-content">
+      <section id="iq-aboutus" class="iq-aboutus overview-block-ptb gray-bg">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-lg-6 text-center">
+                  <img src="{% static 'images/about/01.png' %}" class="img-fluid w-75" alt="#">
+                  <div class="iq-objects-style-1">
+                     <span class="iq-objects-01" data-bottom="transform:translatey(-50px)" data-top="transform:translatey(-50px);">
+                        <img src="{% static 'images/effect/dotted-pattern-black.png' %}" alt="drive02">
+                     </span>
+                     <span class="iq-objects-02" data-bottom="transform:translatey(50px)" data-top="transform:translatey(-100px);">
+                        <img src="{% static 'images/effect/dotted-pattern-black.png' %}" alt="drive02">
+                     </span>
+                     <span class="iq-objects-03" data-bottom="transform:translatex(50px)" data-top="transform:translatex(-100px);">
+                        <img src="{% static 'images/effect/dotted-pattern-black.png' %}" alt="drive02">
+                     </span>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="title-box text-left">
+                     <span class="text-warning">We're a Creative Agency</span>
+                     <h2 class="title">How We Work?</h2>
+                     <p class="mb-0">Contact us today with your project idea</p>
+                  </div>
+                  <p>Sit back and work with us while we develop the your idea into a solution</p>
+                  <a class="button mt-3" href="#">Read More</a>
+               </div>
+            </div>
+         </div>
+         <div class="scrolling-text top right default">
+            <div data-bottom="transform:translatex(300px)" data-top="transform:translatex(0);">Unique Approach</div>
+         </div>
+      </section>
+      
+      
+      <section class="iq-features">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 col-md-12">
+                  <div class="title-box text-center">
+                     <span class="text-warning">Our expertise</span>
+                     <h2 class="title">Exclusive Services</h2>
+                     <p class="mb-0"></p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               {% for service in services %}
+               {% if forloop.counter <= 3 %}
+               <div class="col-lg-4 mb-lg-0 mb-5">
+                  <div class="future-services text-center">
+                     <div class="future-img mb-3">
+                        <img src="{{service.image.url}}" class="img-fluid" alt="{{service.name}}">
+                     </div>
+                     <h4 class="mb-2">{{service.name}}</h4>
+                     <p class="mb-0">{{service.description}}</p>
+                  </div>
+               </div>
+               {% endif %}
+               {% endfor %}
+            </div>
+         </div>
+         <div class="scrolling-text top left default">
+            <div data-bottom="transform:translatex(-300px)" data-top="transform:translatex(0);">This Is Us</div>
+         </div>
+      </section>
+      
+      
+      <section class="iq-project gray-bg">
+         <div class="container gray-bg">
+            <div class="row align-items-center">
+               <div class="col-lg-6 text-center">
+                  <img src="{% static 'images/planning.jpg' %}" class="img-fluid" alt="#">
+                  <div class="iq-objects-style-1">
+                     <span class="iq-objects-01" data-bottom="transform:translatey(-50px)" data-top="transform:translatey(-50px);">
+                        <img src="{% static 'images/effect/dotted-pattern-black.png' %}" alt="drive02">
+                     </span>
+                     <span class="iq-objects-02" data-bottom="transform:translatey(50px)" data-top="transform:translatey(-100px);">
+                        <img src="{% static 'images/effect/dotted-pattern-black.png' %}" alt="drive02">
+                     </span>
+                     <span class="iq-objects-03" data-bottom="transform:translatex(50px)" data-top="transform:translatex(-100px);">
+                        <img src="{% static 'images/effect/dotted-pattern-black.png' %}" alt="drive02">
+                     </span>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="title-box text-left">
+                     <span class="text-warning">Customize services</span>
+                     <h2 class="title">Project Planning</h2>
+                     <p class="mb-0">Navigate the complexities of project execution seamlessly with SkyeTech's expert Project Planning services.</p>
+                  </div>
+                  <ul class="iq-list">
+                     <li><i class="ion ion-checkmark-circled"></i><span>Strategic Roadmap: Leverage our expertise to create a detailed project roadmap, guiding you through every phase and milestone, ensuring a clear and effective execution strategy.</span></li>
+                     <li><i class="ion ion-checkmark-circled"></i><span>Optimized Resource Allocation: Benefit from our advanced resource management techniques, ensuring optimal allocation of resources to maximize efficiency and minimize project timelines.</span></li>
+                     <li><i class="ion ion-checkmark-circled"></i><span>Risk Mitigation: SkyeTech employs proactive risk assessment and mitigation strategies, identifying potential challenges early on and implementing measures to keep your project on track and within scope.</span></li>
+                  </ul>
+                  <a class="button " href="#">Read More</a>
+               </div>
+            </div>
+         </div>
+         <div class="scrolling-text top right default">
+            <div data-bottom="transform:translatex(300px)" data-top="transform:translatex(0);">Integrated Services</div>
+         </div>
+      </section>
+      
+      
+      <section id="our-portfolio" class="iq-portfolio-page overview-block-ptb gray-light-bg">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="title-box text-center">
+                     <span class="text-warning">We're in action</span>
+                     <h2 class="title">Our Portfolio</h2>
+                     <p class="mb-0">Take a look at some of our finished projects.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="iq-masonry-block">
+                     <div class="isotope-filters isotope-tooltip">
+                        <button data-filter="" class="active">All</button>
+                     </div>
+                     <div class="iq-masonry iq-columns-3 ">
+                        <div class="iq-masonry-item branding">
+                           <div class="iq-portfolio">
+                              <a href="portfolio-details.html" class="iq-portfolio-img"><img src="{% static 'images/portfolio/04.jpg' %}" class="img-fluid" alt="#"/></a>
+                              <div class="iq-portfolio-content">
+                                 <h6><a href="portfolio-details.html">Projects 4</a></h6>
+                                 <ul>
+                                    <li>branding</li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="iq-masonry-item web-design">
+                           <div class="iq-portfolio">
+                              <a href="portfolio-details.html" class="iq-portfolio-img"><img src="{% static 'images/portfolio/03.jpg' %}" class="img-fluid" alt="#" /></a>
+                              <div class="iq-portfolio-content">
+                                 <h6><a href="portfolio-details.html">Projects 3</a></h6>
+                                 <ul>
+                                    <li>web design</li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="iq-masonry-item illustration">
+                           <div class="iq-portfolio">
+                              <a href="portfolio-details.html" class="iq-portfolio-img"><img src="{% static 'images/portfolio/02.jpg' %}" class="img-fluid" alt="#"  /></a>
+                              <div class="iq-portfolio-content">
+                                 <h6><a href="portfolio-details.html">Projects 2</a></h6>
+                                 <ul>
+                                    <li>Illustration</li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="iq-masonry-item branding">
+                           <div class="iq-portfolio">
+                              <a href="portfolio-details.html" class="iq-portfolio-img"><img src="{% static 'images/portfolio/01.jpg' %}" class="img-fluid" alt="#" /></a>
+                              <div class="iq-portfolio-content">
+                                 <h6><a href="portfolio-details.html">Projects 13</a></h6>
+                                 <ul>
+                                    <li>branding</li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="scrolling-text top right default">
+            <div data-bottom="transform:translatex(-300px)" data-top="transform:translatex(0);">In a Nutshell</div>
+         </div>
+      </section>
+           
+      
+      <section id="our-blog" class="blog gray-bg">
+         <div class="container gray-bg">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="title-box text-center">
+                     <span class="text-warning">BizBag Blog</span>
+                     <h2 class="title">Trending Blogs</h2>
+                     <p class="mb-0"></p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12 col-md-12">
+                  <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="3" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-margin="30">
+                     <div class="item">
+                        <div class="iq-blog-box">
+                           <div class="iq-blog-image clearfix">
+                              <img src="{% static 'images/blog/01.jpg' %}" class="img-fluid center-block" alt="blogimage0">
+                              <ul class="iq-blogtag">
+                                 <li><a href="#">Technology</a></li>
+                              </ul>
+                           </div>
+                           <div class="iq-blog-detail">
+                              <div class="iq-blog-meta">
+                                 <ul>
+                                    <li class="list-inline-item">
+                                       <a href="#" class="main-color" rel="bookmark">May 18, 2019</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="blog-title">
+                                 <a href="blog-details.html">
+                                    <h5>Construction industry</h5>
+                                 </a>
+                              </div>
+                              <p>They bring to you a host of created infographics that contain the latest digital marketing </p>
+                              <a class="btn-link" href="blog-details.html">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="iq-blog-box">
+                           <div class="iq-blog-image clearfix">
+                              <img src="{% static 'images/blog/02.jpg' %}" class="img-fluid center-block" alt="blogimage1">
+                              <ul class="iq-blogtag">
+                                 <li><a href="#">Business</a></li>
+                              </ul>
+                           </div>
+                           <div class="iq-blog-detail">
+                              <div class="iq-blog-meta">
+                                 <ul>
+                                    <li class="list-inline-item">
+                                       <a href="#" class="main-color" rel="bookmark">May 18, 2019</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="blog-title">
+                                 <a href="blog-details.html">
+                                    <h5>Life Lack Meaning</h5>
+                                 </a>
+                              </div>
+                              <p>If you are keen on knowing new things about the digital marketing industry then Marketing Land.</p>
+                              <a class="btn-link" href="blog-details.html">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <div class="iq-blog-box">
+                           <div class="iq-blog-image clearfix">
+                              <img src="{% static 'images/blog/03.jpg' %}" class="img-fluid center-block" alt="blogimage2">
+                              <ul class="iq-blogtag">
+                                 <li><a href="#">Design</a></li>
+                              </ul>
+                           </div>
+                           <div class="iq-blog-detail">
+                              <div class="iq-blog-meta">
+                                 <ul>
+                                    <li class="list-inline-item">
+                                       <a href="#" class="main-color" rel="bookmark">May 18, 2019</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="blog-title">
+                                 <a href="blog-details.html">
+                                    <h5>Content Marketing</h5>
+                                 </a>
+                              </div>
+                              <p>Content Marketing  offers some of the best advice around in terms of how content can help your brand.</p>
+                              <a class="btn-link" href="blog-details.html">Read More<i class="fa fa-angle-right"  aria-hidden="true"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="scrolling-text top left default">
+            <div data-bottom="transform:translatex(-300px)" data-top="transform:translatex(0);">Insights</div>
+         </div>
+      </section>
+      
+      {% include 'components/newsletter.html' %}
+   </div>
+{% endblock %}

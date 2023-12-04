@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<section class="iq-breadcrumb text-left">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-md-8 text-left mb-4 mb-lg-0 align-self-center">
+            <h2 class="title">Contact Us</h2>
+         </div>
+         <div class="col-lg-4 col-md-4 text-right">
+            <img  src="{% static 'images/contact-us/02.png' %}" class="img-fluid" alt="#"/>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Breadcrumb End -->
+<!-- Main-Content Start -->
+<div class="main-content">
+   <!-- Contact Us Start -->
+   <section class="iq-contactus gray-bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-9">
+               <div class="title-box text-center">
+                  <span class="text-warning">Get in Touch</span>
+                  <h2 class="title">Contact Us</h2>
+                  <p class="mb-0">We'll get back to you as soon as possible</p>
+               </div>
+               <form  class="contact-us" id="contact" method="post">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <label>Your Name<br>
+                        <span class="form-control-wrap your-name">
+                        <input type="text" name="name" Placeholder="Your Name" class="form-control text" aria-required="true" aria-invalid="false"></span>
+                        </label>
+                     </div>
+                     <div class="col-md-6">
+                        <label>Your Email<br>
+                        <span class="form-control-wrap your-email">
+                        <input type="email" name="email" Placeholder="Email" class="form-control text email" aria-required="true" aria-invalid="false"></span>
+                        </label>
+                     </div>
+                     <div class="col-xl-12">
+                        <label>Subject<br>
+                        <span class="form-control-wrap your-subject">
+                        <input type="text" name="subject" Placeholder="Subject" class="form-control text" aria-invalid="false"></span>
+                        </label>
+                     </div>
+                     <div class="col-xl-12">
+                        <label>Your Message<br>
+                        <span class="form-control-wrap your-message">
+                        <textarea name="message" Placeholder="Message" class="form-control textarea" aria-invalid="false"></textarea></span>
+                        </label>
+                     </div>
+                     <div class="col-xl-12 justify-content-end d-flex">
+                        <button id="submit" name="submit" type="submit" value="Send" class="button btn-yellow" >Send message</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Contact Us End -->
+   <!-- Fancy-box Start -->
+   <section class="overview-block-ptb">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="title-box  text-center">
+                  <span class="text-warning">Get In Touch</span>
+                  <h2 class="title">Quick Support</h2>
+                  <p class="mb-0">You can get all the contact information.</p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-4">
+               <div class="iq-fancy-box text-center">
+                  <div class="iq-icon">
+                     <i aria-hidden="true" class="ion ion-ios-location-outline"></i>
+                  </div>
+                  <div class="fancy-content">
+                     <h4>Our Address</h4>
+                     <p>1234 North Avenue Luke Lane, South Bend, IN 360001</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-4">
+               <div class="iq-fancy-box text-center">
+                  <div class="iq-icon">
+                     <i aria-hidden="true" class="ion ion-ios-email-outline"></i>
+                  </div>
+                  <div class="fancy-content">
+                     <h4>Our Email Address</h4>
+                     <p>support@bizbag.com<br>
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-4">
+               <div class="iq-fancy-box text-center">
+                  <div class="iq-icon">
+                     <i aria-hidden="true" class="ion ion-ios-telephone-outline"></i>
+                  </div>
+                  <div class="fancy-content">
+                     <h4>Our Phone Number</h4>
+                     <p>+11 123 456 7890<br>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Fancy-box End -->
+   {% include 'components/newsletter.html' %}
+</div>
+<!-- Main-Content End -->
+{% endblock %}

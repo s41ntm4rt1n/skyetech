@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{project.title}} {% endblock %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<section class="iq-breadcrumb text-left">
+<div class="container">
+   <div class="row">
+      <div class="col-lg-8 col-md-8 text-left mb-4 mb-lg-0 align-self-center">
+         <h2 class="title">Project Details</h2>
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+               <li class="breadcrumb-item"><a href="{% url 'portfolio' %}"><i class="fa fa-home" aria-hidden="true"></i>Projects</a></li>
+               <li class="breadcrumb-item active">{{project.title}}</li>
+            </ol>
+         </nav>
+      </div>
+      <div class="col-lg-4 col-md-4 text-right">
+         <img  src="{% static 'images/blog/01.png' %}" class="img-fluid" alt="#"/>
+      </div>
+   </div>
+</div>
+</section>
+<!-- Breadcrumb End -->
+<!-- Main-Content Start -->
+<div class="main-content">
+<!-- Portfolio deatils Start -->
+<section>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-7 col-sm-12">
+            <div class="iq-portfolio-image">
+               <img class="img-fluid" src="{{project.image.url}}" alt="#">
+            </div>
+         </div>
+         <div class="col-lg-5 col-sm-12 mt-5 mt-lg-0">
+            <h4>{{project.title}}</h4>
+            <p>{{project.description}}</p>
+            <ul class="portfolio-meta bottommargin">
+               <li>
+                  <span class="lead">Created by:</span>
+                  <span class="float-right">SkyeTech Technologies</span>
+               </li>
+               <li>
+                  <span class="lead">Client:</span>
+                  <span class="float-right">{{project.client}}</span>
+               </li>
+               <li>
+                  <span class="lead">Completed on:</span>
+                  <span class="float-right">{{project.updated}}</span>
+               </li>
+               <li>
+               </li>
+            </ul>
+            <div class="row col-lg-12">
+               <div class="portfolio-button pr-2">
+                  <a class="button" href="https://localhost:8008">View Project</a>
+               </div>
+               <div class="portfolio-button">
+                  <a class="button" href="{{project.get_documentation_absolute_url}}">Documentation</a>
+               </div>
+            </div>
+            
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Portfolio deatils Start -->
+<!-- Our Portfolio Start -->
+<section class="Our-portfolio overview-block-pb">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="title-box text-center">
+               <span>View Recent Portfolio</span>
+               <h2 class="title">Recent Portfolio</h2>
+               <p class="mb-0">It is a long established fact that a reader will be distracted</p>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-lg-12 col-md-12">
+            <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="3" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-margin="15">
+               {% for project in projects %}
+               <div class="item">
+                  <div class="iq-portfolio">
+                     <a href="{{project.get_absolute_url}}" class="iq-portfolio-img"><img src="{{project.image.url}}" class="img-fluid" alt="{{project.title}}"></a>
+                     <div class="iq-portfolio-content">
+                        <h6><a href="{{project.get_absolute_url}}">{{project.title}}</a></h6>
+                        <ul>
+                           <li>{{project.category}}</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+               <div class="item">
+                  <div class="iq-portfolio">
+                     <a href="masonry-4-columns.html" class="iq-portfolio-img"><img src="{% static 'images/portfolio/02.jpg' %}" class="img-fluid" alt="#"></a>
+                     <div class="iq-portfolio-content">
+                        <h6><a href="masonry-4-columns.html">Projects 11</a></h6>
+                        <ul>
+                           <li>Illustration</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="iq-portfolio">
+                     <a href="masonry-4-columns.html" class="iq-portfolio-img"><img src="{% static 'images/portfolio/03.jpg' %}" class="img-fluid" alt="#"></a>
+                     <div class="iq-portfolio-content">
+                        <h6><a href="masonry-4-columns.html">Projects 11</a></h6>
+                        <ul>
+                           <li>Illustration</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Our Portfolio End -->
+</div>
+<!-- Main-Content End -->
+{% endblock %}

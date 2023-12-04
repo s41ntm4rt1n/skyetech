@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Our Services{% endblock %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<section class="iq-breadcrumb text-left">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-md-8 text-left mb-4 mb-lg-0 align-self-center">
+            <h2 class="title">Our Services</h2>
+         </div>
+         <div class="col-lg-4 col-md-4 text-right">
+            <img  src="{% static 'images/services.jpg' %}" class="img-fluid" alt="#"/>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Breadcrumb End -->
+<!-- Main-Content Start -->
+<div class="main-content">
+   <!-- About-us Start -->
+   <section id="iq-aboutus" class="iq-aboutus mt-5 gray-bg">
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="col-lg-6 text-center">
+               <img src="{% static 'images/about/01.png' %}" class="img-fluid w-75" alt="#">
+               <div class="iq-objects-style-1">
+                  <span class="iq-objects-01" data-bottom="transform:translatey(-50px)" data-top="transform:translatey(-50px);">
+                  <img src="{% static 'images/effect/dotted-pattern-black.png' %}" alt="drive02">
+                  </span>
+                  <span class="iq-objects-02" data-bottom="transform:translatey(50px)" data-top="transform:translatey(-100px);">
+                  <img src="{% static 'images/effect/dotted-pattern-black.png' %}" alt="drive02">
+                  </span>
+                  <span class="iq-objects-03" data-bottom="transform:translatex(50px)" data-top="transform:translatex(-100px);">
+                  <img src="{% static 'images/effect/dotted-pattern-black.png' %}" alt="drive02">
+                  </span>
+               </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="title-box text-left">
+                  <span class="text-warning">We're a Creative Agency</span>
+                  <h2 class="title">How We Work?</h2>
+                  <p class="mb-0">Contact us today with your project idea.</p>
+               </div>
+               <p>Sit back and work with us while we develop the your idea into a solution.</p>
+               <a class="button mt-3" href="#">Read More</a>
+            </div>
+         </div>
+      </div>
+      <div class="scrolling-text top right default">
+         <div data-bottom="transform:translatex(300px)" data-top="transform:translatex(0);">Unique Approach</div>
+      </div>
+   </section>
+   <!-- About-us End -->
+   <!-- Features Start -->
+   <section class="iq-features">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12 col-md-12">
+               <div class="title-box text-center">
+                  <span class="text-warning">Our expertise</span>
+                  <h2 class="title">Exclusive Features</h2>
+                  <p class="mb-0">It is a long established fact that a reader will be distracted</p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            {% for service in services %}
+            <div class="col-lg-4">
+               <div class="future-services text-center mt-0 mb-5">
+                  <div class="future-img mb-3">
+                     <img src="{{service.image.url}}" alt="{{service.name}}" class="img-fluid">
+                  </div>
+                  <h4 class="mb-2">{{service.name}}</h4>
+                  <p class="mb-0">Vitae elementum curabitur vitae velit ut pharetra sit amet aliquam id.</p>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+      <div class="scrolling-text top left default">
+         <div data-bottom="transform:translatex(-300px)" data-top="transform:translatex(0);">This Is Us</div>
+      </div>
+   </section>
+   <!-- Features End -->
+   <!-- Portfolio-start  -->
+   <section id="our-portfolio" class="iq-portfolio-page gray-light-bg gray-bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="title-box text-center">
+                  <span class="text-warning">We're in action</span>
+                  <h2 class="title">Our Amazing Portfolio</h2>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="iq-masonry-block">
+                  <div class="isotope-filters isotope-tooltip">
+                     <button data-filter="" class="active">All</button>
+                  </div>
+                  <div class="iq-masonry iq-columns-3 ">
+                     <div class="iq-masonry-item branding">
+                        <div class="iq-portfolio">
+                           <a href="#" class="iq-portfolio-img"><img  src="{% static 'images/portfolio/05.jpg' %}" class="img-fluid" alt="#"/></a>
+                           <div class="iq-portfolio-content">
+                              <h6><a href="#">Projects 14</a></h6>
+                              <ul>
+                                 <li>branding</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="iq-masonry-item web-design">
+                        <div class="iq-portfolio">
+                           <a href="#" class="iq-portfolio-img"><img src="{% static 'images/portfolio/06.jpg' %}" class="img-fluid" alt="#"/></a>
+                           <div class="iq-portfolio-content">
+                              <h6><a href="#">Projects 12</a></h6>
+                              <ul>
+                                 <li>web design</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="iq-masonry-item illustration">
+                        <div class="iq-portfolio">
+                           <a href="#" class="iq-portfolio-img"><img src="{% static 'images/portfolio/02.jpg' %}" class="img-fluid" alt="#"/></a>
+                           <div class="iq-portfolio-content">
+                              <h6><a href="#">Projects 11</a></h6>
+                              <ul>
+                                 <li>Illustration</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="iq-masonry-item branding">
+                        <div class="iq-portfolio">
+                           <a href="#" class="iq-portfolio-img"><img src="{% static 'images/portfolio/01.jpg' %}" class="img-fluid" alt="#"/></a>
+                           <div class="iq-portfolio-content">
+                              <h6><a href="#">Projects 10</a></h6>
+                              <ul>
+                                 <li>branding</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="iq-masonry-item branding">
+                        <div class="iq-portfolio">
+                           <a href="#" class="iq-portfolio-img"><img  src="{% static 'images/portfolio/08.jpg' %}" class="img-fluid" alt="#" /></a>
+                           <div class="iq-portfolio-content">
+                              <h6><a href="#">Projects 1</a></h6>
+                              <ul>
+                                 <li>branding</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="scrolling-text top right default">
+         <div data-bottom="transform:translatex(-300px)" data-top="transform:translatex(0);">In a Nutshell</div>
+      </div>
+   </section>
+   <!-- Portfolio End  -->
+   <!-- Client Testimonial start -->
+   <section id="our-clients" class="our-clients">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="title-box text-center">
+                  <span class="text-warning">From our clients</span>
+                  <h2 class="title">Client Testimonials</h2>
+                  <p class="mb-0">It is a long established fact that a reader will be distracted</p>
+               </div>
+            </div>
+         </div>
+         <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8">
+               <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1" data-items-mobile="1" data-items-mobile-sm="1" data-margin="15">
+                  <div class="item">
+                     <div class="iq-client">
+                        <div class="client-img">
+                           <img alt="#" class="img-fluid rounded-circle" src="{% static 'images/testimonial/01.jpg' %}">
+                        </div>
+                        <p> Ornare aenean euismod elementum nisi quis eleifend quam. Vitae congue eu consequat ac felis donec et odio. Eget felis eget nunc lobortis. </p>
+                        <div class="client-info">
+                           <div class="client-name">
+                              <h5>Richardson</h5>
+                              <span class="sub-title ">Developer, Bizbag</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="iq-client">
+                        <div class="client-img">
+                           <img alt="#" class="img-fluid rounded-circle" src="{% static 'images/testimonial/02.jpg' %}">
+                        </div>
+                        <p> Ornare aenean euismod elementum nisi quis eleifend quam. Vitae congue eu consequat ac felis donec et odio. Eget felis eget nunc lobortis. </p>
+                        <div class="client-info">
+                           <div class="client-name">
+                              <h5>Morales</h5>
+                              <span class="sub-title">Designer, CEO</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="iq-client">
+                        <div class="client-img">
+                           <img alt="#" class="img-fluid rounded-circle" src="{% static 'images/testimonial/03.jpg' %}">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="client-info">
+                           <div class="client-name">
+                              <h5>Kelly</h5>
+                              <span class="sub-title">Designer, Co-Founder</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="scrolling-text top left white">
+         <div data-bottom="transform:translatex(300px)" data-top="transform:translatex(0);">Services Speak Itself</div>
+      </div>
+   </section>
+   <!--Client Testimonial end -->
+   {% include 'components/newsletter.html' %}
+</div>
+<!-- Main-Content End -->
+{% endblock %}

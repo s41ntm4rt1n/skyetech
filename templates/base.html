@@ -1,0 +1,97 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+   <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %} {% endblock %} | SKYETECH</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">      
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/typography.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link href="https://fonts.cdnfonts.com/css/inconsolata-2" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Inconsolata:wght@500;600&family=Martian+Mono:wght@300;400&display=swap" rel="stylesheet">
+      <style>
+        body{
+          font-family: 'Hedvig Letters Sans', 'SF Pro Display', 'DM Mono', 'Inter';
+        }
+        body::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #ddd;
+        }
+        .logo{
+            aspect-ratio: 5/4;
+            height: 65px;
+        }
+        .logo-title{
+            font-size: 40px;
+        }
+        .img-fluid{
+            object-fit: contain;
+        }
+      </style>
+   </head>
+   <body>
+      
+      <div id="loading">
+         <div id="loading-center">
+            <img src="{% static 'images/spinner.gif' %}" alt="loader">
+         </div>
+      </div>
+      
+    {% include 'components/header.html' %}
+
+   {% block content %}
+   {% endblock %}
+ 
+   {% include 'components/footer.html' %}
+ <div id="back-to-top">
+    <a class="top" id="top" href="#top"> <i class="ion-ios-arrow-up"></i> </a>
+ </div>
+
+ <script>
+    function highlightCurrentPage() {
+        var currentPath = window.location.pathname;
+        var navLinks = document.querySelectorAll('.menu-links a');
+        navLinks.forEach(function(link) {
+            var linkPath = link.getAttribute('href');
+            if (linkPath === currentPath) {
+                link.classList.add('active');
+                var listItem = link.closest('li');
+                if (listItem) {
+                    listItem.classList.add('active');
+                }
+            }
+        });
+    }
+    document.addEventListener('DOMContentLoaded', highlightCurrentPage);
+</script>
+ <script src="{% static 'js/jquery-1.11.1.min.js' %}" ></script>
+ <script src="{% static 'js/popper.min.js' %}"></script>
+ <script src="{% static 'js/bootstrap.min.js' %}" ></script>
+ <script src="{% static 'js/appear.js' %}"></script>
+ <script src="{% static 'js/mega_menu.min.js' %}"></script>
+ <script src="{% static 'js/countdown.min.js' %}"></script>
+ <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+ <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+ <script src="{% static 'js/jquery.countTo.js' %}" ></script>
+ <script src="{% static 'js/skrollr.js' %}"></script>
+ <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+ <script src="{% static 'js/wow.min.js' %}"></script>
+ <!-- <script type="text/javascript" src="{% static 'js/retina.js' %}"></script> -->
+ <script src="{% static 'js/custom.js' %}" ></script>
+</body>
+</html>

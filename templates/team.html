@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Meet The Team {% endblock %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<section class="iq-breadcrumb text-left">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-md-8 text-left mb-4 mb-lg-0 align-self-center">
+            <h2 class="title">Our Team</h2>
+         </div>
+         <div class="col-lg-4 col-md-4 text-right">
+            <img  src="{% static 'images/team.jpg' %}" alt="#" style="aspect-ratio: 16/9; height: 300px;"/>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Breadcrumb End -->
+<!-- Main-Content Start -->
+<div class="main-content">
+   <!-- Our Team start -->
+   <section id="our-team" class="our-team gray-bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="title-box text-center">
+                  <span class="text-warning">Work with us</span>
+                  <h2 class="title">Meet The Team</h2>
+                  <p class="mb-0"></p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            {% for member in team %}
+            <div class="col-lg-3 col-md-6 mb-5">
+               <div class="iq-team">
+                  <div class="iq-team-img">
+                     <img src="{{member.image.url}}" class="img-fluid center-block" alt="{{member.name}}">
+                     <div class="share">
+                        <ul>
+                           {% for url in member.get_urls %}
+                           <li><a href="{{url.url}}"><i class="{{url.title}}"></i></a></li>
+                           {% endfor %}
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="iq-team-info text-center">
+                     <a href="{{member.get_absolute_url}}"><h5>{{member.name}}</h5></a>
+                     <span class="team-post">{{member.role}}</span>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+      <div class="scrolling-text bottam right default">
+         <div data-bottom="transform:translatex(300px)" data-top="transform:translatex(0);">Dynamic minds</div>
+      </div>
+   </section>
+   <!-- Our Team  end -->
+   
+   <!-- Our Blog Start -->
+   <section id="our-blog" class="blog gray-bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="title-box text-center">
+                  <span class="text-warning">BizBag Blog</span>
+                  <h2 class="title">Trending Topics Blog</h2>
+                  <p class="mb-0">It is a long established fact that a reader will be distracted</p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-12 col-md-12">
+               <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="3" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-margin="30">
+                  <div class="item">
+                     <div class="iq-blog-box">
+                        <div class="iq-blog-image clearfix">
+                           <img src="{% static 'images/blog/01.jpg' %}" class="img-fluid center-block" alt="blogimage0">
+                           <ul class="iq-blogtag">
+                              <li><a href="#">Technology</a></li>
+                           </ul>
+                        </div>
+                        <div class="iq-blog-detail">
+                           <div class="iq-blog-meta">
+                              <ul>
+                                 <li class="list-inline-item">
+                                    <a href="#" class="main-color" rel="bookmark">May 18, 2019</a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="blog-title">
+                              <a href="two-column-blog.html">
+                                 <h5>Construction industry</h5>
+                              </a>
+                           </div>
+                           <p>They bring to you a host of created infographics that contain the latest digital marketing </p>
+                           <a class="btn-link" href="right-sidebar-blog.html">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="iq-blog-box">
+                        <div class="iq-blog-image clearfix">
+                           <img src="{% static 'images/blog/02.jpg' %}" class="img-fluid center-block" alt="blogimage1">
+                           <ul class="iq-blogtag">
+                              <li><a href="#">Business</a></li>
+                           </ul>
+                        </div>
+                        <div class="iq-blog-detail">
+                           <div class="iq-blog-meta">
+                              <ul>
+                                 <li class="list-inline-item">
+                                    <a href="#" class="main-color" rel="bookmark">May 18, 2019</a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="blog-title">
+                              <a href="two-column-blog.html">
+                                 <h5>Life Lack Meaning</h5>
+                              </a>
+                           </div>
+                           <p>If you are keen on knowing new things about the digital marketing industry then Marketing Land.</p>
+                           <a class="btn-link" href="right-sidebar-blog.html">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="iq-blog-box">
+                        <div class="iq-blog-image clearfix">
+                           <img src="{% static 'images/blog/03.jpg' %}" class="img-fluid center-block" alt="blogimage2">
+                           <ul class="iq-blogtag">
+                              <li><a href="#">Design</a></li>
+                           </ul>
+                        </div>
+                        <div class="iq-blog-detail">
+                           <div class="iq-blog-meta">
+                              <ul>
+                                 <li class="list-inline-item">
+                                    <a href="#" class="main-color" rel="bookmark">May 18, 2019</a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="blog-title">
+                              <a href="two-column-blog.html">
+                                 <h5>Content Marketing</h5>
+                              </a>
+                           </div>
+                           <p>Content Marketing  offers some of the best advice around in terms of how content can help your brand.</p>
+                           <a class="btn-link" href="right-sidebar-blog.html">Read More<i class="fa fa-angle-right"  aria-hidden="true"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="scrolling-text top left default">
+         <div data-bottom="transform:translatex(-300px)" data-top="transform:translatex(0);">Insights</div>
+      </div>
+   </section>
+   <!--Our Blog End -->
+   {% include 'components/newsletter.html' %}
+</div>
+<!-- Main-Content End -->
+{% endblock %}

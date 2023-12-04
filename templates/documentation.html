@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{project.title}}{% endblock %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<section class="iq-breadcrumb text-left">
+<div class="container">
+   <div class="row">
+      <div class="col-lg-8 col-md-8 text-left mb-4 mb-lg-0 align-self-center">
+         <h2 class="title">Project Documentation</h2>
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+               <li class="breadcrumb-item"><a href="{% url 'portfolio' %}"><i class="fa fa-home" aria-hidden="true"></i>Projects</a></li>
+               <li class="breadcrumb-item active"><a href="{{project.get_absolute_url}}">{{project.title}}</a></li>
+            </ol>
+         </nav>
+      </div>
+      <div class="col-lg-4 col-md-4 text-right">
+         <img  src="{{project.image.url}}" class="img-fluid" alt="#"/>
+      </div>
+   </div>
+</div>
+</section>
+<!-- Breadcrumb End -->
+<!-- Main-Content Start -->
+<div class="main-content">
+<!-- Portfolio deatils Start -->
+<section>
+   <div class="container">
+    <div class="border-bottom"></div>
+    {% for part in parts %}
+    <div class="col-lg-11 order-lg-1 order-2 border-bottom mb-3">
+        <div class="iq-blog-box">
+           <div class="iq-blog-detail">
+              <div class="iq-blog-meta">
+                 <ul>
+                    <li class="list-inline-item">
+                       <a href="#" class="main-color" rel="bookmark">{{forloop.counter}}</a>
+                    </li>
+                 </ul>
+              </div>
+              <div class="blog-title">
+                 <a href="#">
+                    <h5>{{part.title}}</h5>
+                 </a>
+              </div>
+              <p>They bring to you a host of created infographics that contain the latest digital marketing </p>
+              <a class="btn-link" href="{{part.url}}">Read More<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+           </div>
+        </div>
+     </div>
+     {% endfor %}
+   </div>
+</section>
+<!-- Portfolio deatils Start -->
+
+</div>
+<!-- Main-Content End -->
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Portfolio{% endblock %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<section class="iq-breadcrumb text-left">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-md-8 text-left mb-4 mb-lg-0 align-self-center">
+            <h2 class="title">Portfolio</h2>
+         </div>
+         <div class="col-lg-4 col-md-4 text-right">
+            <img  src="{% static 'images/projects.jpg' %}" style="aspect-ratio: 16/9; height: 300px;"/>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- Breadcrumb End -->
+<!-- Main-Content Start -->
+<div class="main-content">
+   <!-- Portfolio-start  -->
+   <section id="our-portfolio" class="iq-portfolio-page gray-bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="iq-masonry-block">
+                  <div class="isotope-filters isotope-tooltip">
+                     <button data-filter="" class="active">All</button>
+                  </div>
+                  <div class="iq-masonry iq-columns-4">
+                     {% for project in projects %}
+                     <div class="iq-masonry-item branding">
+                        <div class="iq-portfolio">
+                           <a href="{{project.get_absolute_url}}" class="iq-portfolio-img"><img src="{{project.image.url}}" style="aspect-ratio: 1/1; height: 255px;" alt="{{project.title}}"/></a>
+                           <div class="iq-portfolio-content">
+                              <h6><a href="{{project.get_absolute_url}}">{{project.title}}</a></h6>
+                              <ul>
+                                 <li>{{project.category}}</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     {% endfor %}                    
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Portfolio End  -->
+   {% include 'components/newsletter.html' %}
+</div>
+<!-- Main-Content End -->
+{% endblock %}
